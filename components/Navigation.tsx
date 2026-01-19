@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -47,19 +48,30 @@ export default function Navigation() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center"
+              className="flex items-center space-x-3"
             >
-              <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent">
-                NOLA
-              </span>
-              <span className={`ml-2 text-xl md:text-2xl font-semibold ${showSolidBg ? 'text-slate-800' : 'text-white'}`}>
-                Web Dev
-              </span>
+              <div className="relative w-12 h-12 md:w-14 md:h-14">
+                <Image
+                  src="/logo.png"
+                  alt="NOLA Web Development"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg md:text-xl font-bold text-[#2E7D32]">
+                  NOLA
+                </span>
+                <span className="text-xs md:text-sm font-semibold text-[#7B1FA2] -mt-1">
+                  WEB DEVELOPMENT
+                </span>
+              </div>
             </motion.div>
           </Link>
 

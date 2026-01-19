@@ -1,13 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
@@ -17,6 +20,10 @@ const navLinks = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Check if we're on home page
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +34,13 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Always show solid background on non-home pages, or when scrolled
+  const showSolidBg = !isHomePage || scrolled;
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
+        showSolidBg
           ? 'bg-white/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
@@ -38,19 +48,30 @@ export default function Navigation() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center"
+              className="flex items-center space-x-3"
             >
-              <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent">
-                NOLA
-              </span>
-              <span className={`ml-2 text-xl md:text-2xl font-semibold ${scrolled ? 'text-slate-800' : 'text-white'}`}>
-                Web Dev
-              </span>
+              <div className="relative w-12 h-12 md:w-14 md:h-14">
+                <Image
+                  src="/logo.png"
+                  alt="NOLA Web Development"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg md:text-xl font-bold text-[#2E7D32]">
+                  NOLA
+                </span>
+                <span className="text-xs md:text-sm font-semibold text-[#7B1FA2] -mt-1">
+                  WEB DEVELOPMENT
+                </span>
+              </div>
             </motion.div>
           </Link>
 
@@ -66,7 +87,7 @@ export default function Navigation() {
                 <Link
                   href={link.href}
                   className={`text-base font-medium transition-colors duration-200 hover:text-primary-600 ${
-                    scrolled ? 'text-slate-700' : 'text-white'
+                    showSolidBg ? 'text-slate-700' : 'text-white'
                   }`}
                 >
                   {link.label}
@@ -88,7 +109,7 @@ export default function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'
+              showSolidBg ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'
             }`}
             aria-label="Toggle menu"
           >

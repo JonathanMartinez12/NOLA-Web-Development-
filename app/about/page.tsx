@@ -182,12 +182,18 @@ export default function AboutPage() {
               Ready to take your business to the next level? We'd love to hear about
               your project and discuss how we can help you succeed.
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-white bg-transparent hover:bg-white hover:text-primary-600 transition-all duration-200 shadow-lg"
               >
                 Get in Touch
+              </Link>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-lg font-medium rounded-lg text-primary-600 hover:bg-slate-100 transition-all duration-200 shadow-lg"
+              >
+                View Our Work
               </Link>
             </div>
           </motion.div>

@@ -37,7 +37,7 @@ function SuccessContent() {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl font-bold text-slate-800 mb-4"
             >
-              Welcome to NOLA Web Dev! 🎉
+              Welcome to NOLA Web Development! 🎉
             </motion.h1>
 
             <motion.p

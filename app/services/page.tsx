@@ -184,7 +184,7 @@ export default function ServicesPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our Services
+              New Orleans Web Development & SEO Services
             </h1>
             <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-4">
               <strong>Purchase an SEO package → Get a FREE website!</strong>

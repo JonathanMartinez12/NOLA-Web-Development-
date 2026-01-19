@@ -184,13 +184,53 @@ export default function ServicesPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our Services & Pricing
+              FREE Website Build + Monthly SEO
             </h1>
-            <p className="text-xl text-slate-200 leading-relaxed">
-              Comprehensive web development and digital marketing solutions designed to
-              help your business thrive online.
+            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-4">
+              We build your custom website completely free. You only pay monthly for SEO
+              and online visibility to get more leads, calls, and customers.
+            </p>
+            <p className="text-lg text-slate-300 leading-relaxed">
+              See your demo first—love it? We make it live and start driving traffic to your business.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Value Proposition */}
+      <section className="py-12 bg-gradient-to-br from-primary-50 to-accent-50">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+            >
+              <div className="p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-5xl font-bold text-primary-600 mb-2">$0</div>
+                <h3 className="font-semibold text-slate-800 mb-2">Website Build Cost</h3>
+                <p className="text-sm text-slate-600">
+                  We design and build your custom website completely free
+                </p>
+              </div>
+              <div className="p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-5xl font-bold text-accent-600 mb-2">100%</div>
+                <h3 className="font-semibold text-slate-800 mb-2">Demo First Policy</h3>
+                <p className="text-sm text-slate-600">
+                  Review your website demo before it goes live—no surprises
+                </p>
+              </div>
+              <div className="p-6 bg-white rounded-xl shadow-lg">
+                <div className="text-5xl font-bold text-primary-600 mb-2">24/7</div>
+                <h3 className="font-semibold text-slate-800 mb-2">SEO Working For You</h3>
+                <p className="text-sm text-slate-600">
+                  Your monthly plan keeps you visible and brings in leads
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -205,11 +245,11 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              What We Offer
+              What's Included in Your Monthly Plan
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              From custom web development to comprehensive SEO strategies, we provide
-              everything you need to succeed online.
+              Every package includes a free custom website plus ongoing SEO and marketing
+              to drive customers to your business.
             </p>
           </motion.div>
 

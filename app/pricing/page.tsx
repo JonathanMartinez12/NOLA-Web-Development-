@@ -18,54 +18,61 @@ interface PricingPlan {
 const pricingPlans: PricingPlan[] = [
   {
     name: 'Starter',
-    price: '$99',
+    price: '$349',
     priceId: 'price_starter_monthly', // Replace with your actual Stripe Price ID
-    description: 'Perfect for small businesses getting started',
+    description: 'Perfect for service-based businesses ready to be found online',
     billingPeriod: 'month',
     features: [
-      'Website hosting & maintenance',
-      'Monthly performance reports',
-      'Basic SEO optimization',
-      'Security updates',
-      'Email support',
-      '2 content updates per month',
+      'FREE Custom Website Build (Worth $3,000)',
+      'See Your Demo First - Go Live When Ready',
+      'Local SEO to Rank in Your Area',
+      'Google Business Profile Setup',
+      'Monthly Traffic & Lead Reports',
+      'Mobile-Optimized for All Devices',
+      'Basic On-Page SEO',
+      'Email Support',
     ],
     popular: false,
   },
   {
-    name: 'Professional',
-    price: '$249',
-    priceId: 'price_professional_monthly', // Replace with your actual Stripe Price ID
-    description: 'Ideal for growing businesses',
+    name: 'Premium',
+    price: '$499',
+    priceId: 'price_premium_monthly', // Replace with your actual Stripe Price ID
+    description: 'Most popular - For businesses that want more leads and visibility',
     billingPeriod: 'month',
     features: [
-      'Everything in Starter',
-      'Advanced SEO optimization',
-      'Monthly blog posts (2x)',
-      'Social media integration',
-      'Analytics & insights',
-      '5 content updates per month',
-      'Priority email support',
-      'Performance optimization',
+      'FREE Custom Website Build (Worth $5,000)',
+      'See Your Demo First - Go Live When Ready',
+      'Advanced Local & Regional SEO',
+      'Google Business Profile Optimization',
+      '2 Blog Posts/Month for Authority',
+      'Social Media Integration',
+      'Weekly Performance Tracking',
+      'Competitor Analysis',
+      'Schema Markup for Better Rankings',
+      'Priority Email Support',
     ],
     popular: true,
   },
   {
-    name: 'Enterprise',
-    price: '$499',
-    priceId: 'price_enterprise_monthly', // Replace with your actual Stripe Price ID
-    description: 'For businesses that need it all',
+    name: 'Professional',
+    price: '$649',
+    priceId: 'price_professional_monthly', // Replace with your actual Stripe Price ID
+    description: 'For businesses serious about dominating their local market',
     billingPeriod: 'month',
     features: [
-      'Everything in Professional',
-      'Dedicated account manager',
-      'Weekly blog posts (4x)',
-      'Advanced security features',
-      'A/B testing & optimization',
-      'Unlimited content updates',
-      '24/7 priority support',
-      'Custom feature development',
-      'Monthly strategy calls',
+      'FREE Premium Website Build (Worth $8,000)',
+      'See Your Demo First - Go Live When Ready',
+      'Full-Scale SEO & Online Visibility',
+      'Multi-Location SEO (If Applicable)',
+      '4 Blog Posts/Month + Content Strategy',
+      'Google Ads Management Included',
+      'Reputation Management & Reviews',
+      'Monthly Strategy Calls',
+      'Advanced Analytics Dashboard',
+      'Unlimited Content Updates',
+      'Dedicated Account Manager',
+      '24/7 Priority Support',
     ],
     popular: false,
   },
@@ -124,11 +131,13 @@ export default function PricingPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Monthly Plans & Pricing
+              We Build Your Website FREE
             </h1>
-            <p className="text-xl text-slate-200 leading-relaxed">
-              Affordable monthly plans with no long-term contracts. Cancel anytime.
-              Get started with a 14-day free trial!
+            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-4">
+              You only pay for SEO and online visibility to get more leads, calls, and quote requests.
+            </p>
+            <p className="text-lg text-slate-300 leading-relaxed">
+              See your demo website first. Love it? We make it live and start driving customers to your business. Cancel anytime—no long-term contracts.
             </p>
           </motion.div>
         </div>
@@ -209,7 +218,7 @@ export default function PricingPage() {
                       Processing...
                     </>
                   ) : (
-                    'Start Free Trial'
+                    'Get Your Free Website Demo'
                   )}
                 </button>
               </motion.div>
@@ -223,16 +232,24 @@ export default function PricingPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mt-12 max-w-3xl mx-auto"
           >
-            <h3 className="text-2xl font-bold text-slate-800 mb-4">
-              All Plans Include
+            <h3 className="text-3xl font-bold text-slate-800 mb-6">
+              Every Plan Includes a FREE Website
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="p-6 bg-white rounded-lg shadow">
                 <h4 className="font-semibold text-slate-800 mb-2">
-                  No Setup Fees
+                  See Your Demo First
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Get started immediately with no upfront costs
+                  Review your custom website before going live. No surprises.
+                </p>
+              </div>
+              <div className="p-6 bg-white rounded-lg shadow">
+                <h4 className="font-semibold text-slate-800 mb-2">
+                  No Setup or Build Fees
+                </h4>
+                <p className="text-sm text-slate-600">
+                  We build your website completely free. You only pay monthly for SEO.
                 </p>
               </div>
               <div className="p-6 bg-white rounded-lg shadow">
@@ -240,15 +257,7 @@ export default function PricingPage() {
                   Cancel Anytime
                 </h4>
                 <p className="text-sm text-slate-600">
-                  No long-term contracts or cancellation fees
-                </p>
-              </div>
-              <div className="p-6 bg-white rounded-lg shadow">
-                <h4 className="font-semibold text-slate-800 mb-2">
-                  Secure Payments
-                </h4>
-                <p className="text-sm text-slate-600">
-                  Powered by Stripe for secure transactions
+                  No long-term contracts. If it's not working, cancel hassle-free.
                 </p>
               </div>
             </div>

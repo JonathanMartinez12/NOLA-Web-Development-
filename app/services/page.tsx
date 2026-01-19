@@ -184,14 +184,16 @@ export default function ServicesPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              FREE Website Build + Monthly SEO
+              Our Services
             </h1>
             <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-4">
-              We build your custom website completely free. You only pay monthly for SEO
-              and online visibility to get more leads, calls, and customers.
+              <strong>Purchase an SEO package → Get a FREE website!</strong>
+            </p>
+            <p className="text-lg text-slate-300 leading-relaxed mb-2">
+              Want a website with ongoing SEO to drive traffic? Your custom website build is included free with any monthly SEO package.
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              See your demo first—love it? We make it live and start driving traffic to your business.
+              Need just a website without SEO? One-time payment of <strong>$1,200</strong>.
             </p>
           </motion.div>
         </div>
@@ -209,24 +211,24 @@ export default function ServicesPage() {
               className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
             >
               <div className="p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-5xl font-bold text-primary-600 mb-2">$0</div>
-                <h3 className="font-semibold text-slate-800 mb-2">Website Build Cost</h3>
+                <div className="text-5xl font-bold text-primary-600 mb-2">FREE</div>
+                <h3 className="font-semibold text-slate-800 mb-2">Website with SEO Package</h3>
                 <p className="text-sm text-slate-600">
-                  We design and build your custom website completely free
+                  Purchase any SEO package and get your custom website build included free
                 </p>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-5xl font-bold text-accent-600 mb-2">100%</div>
-                <h3 className="font-semibold text-slate-800 mb-2">Demo First Policy</h3>
+                <div className="text-5xl font-bold text-accent-600 mb-2">$1,200</div>
+                <h3 className="font-semibold text-slate-800 mb-2">Website Only Option</h3>
                 <p className="text-sm text-slate-600">
-                  Review your website demo before it goes live—no surprises
+                  Need just a website? One-time payment with no ongoing SEO
                 </p>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-5xl font-bold text-primary-600 mb-2">24/7</div>
-                <h3 className="font-semibold text-slate-800 mb-2">SEO Working For You</h3>
+                <div className="text-5xl font-bold text-primary-600 mb-2">100%</div>
+                <h3 className="font-semibold text-slate-800 mb-2">Satisfaction Guaranteed</h3>
                 <p className="text-sm text-slate-600">
-                  Your monthly plan keeps you visible and brings in leads
+                  Quality work and transparent pricing with no hidden fees
                 </p>
               </div>
             </motion.div>

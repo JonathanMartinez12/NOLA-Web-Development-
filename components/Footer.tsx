@@ -14,7 +14,6 @@ const footerLinks = {
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Portfolio', href: '/portfolio' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],
@@ -143,18 +142,18 @@ export default function Footer() {
               <li>New Orleans, Louisiana</li>
               <li>
                 <a
-                  href="mailto:info@nolawebdev.com"
+                  href="mailto:nolawebdev@gmail.com"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  info@nolawebdev.com
+                  nolawebdev@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+15041234567"
+                  href="tel:+12813821778"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  (504) 123-4567
+                  (281) 382-1778
                 </a>
               </li>
             </ul>

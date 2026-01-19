@@ -4,10 +4,12 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
@@ -17,6 +19,10 @@ const navLinks = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Check if we're on home page
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +33,13 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Always show solid background on non-home pages, or when scrolled
+  const showSolidBg = !isHomePage || scrolled;
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
+        showSolidBg
           ? 'bg-white/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
@@ -48,7 +57,7 @@ export default function Navigation() {
               <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent">
                 NOLA
               </span>
-              <span className={`ml-2 text-xl md:text-2xl font-semibold ${scrolled ? 'text-slate-800' : 'text-white'}`}>
+              <span className={`ml-2 text-xl md:text-2xl font-semibold ${showSolidBg ? 'text-slate-800' : 'text-white'}`}>
                 Web Dev
               </span>
             </motion.div>
@@ -66,7 +75,7 @@ export default function Navigation() {
                 <Link
                   href={link.href}
                   className={`text-base font-medium transition-colors duration-200 hover:text-primary-600 ${
-                    scrolled ? 'text-slate-700' : 'text-white'
+                    showSolidBg ? 'text-slate-700' : 'text-white'
                   }`}
                 >
                   {link.label}
@@ -88,7 +97,7 @@ export default function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'
+              showSolidBg ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'
             }`}
             aria-label="Toggle menu"
           >

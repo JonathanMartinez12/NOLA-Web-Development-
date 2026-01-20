@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import {
@@ -70,6 +70,17 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+      console.log('EmailJS initialized with public key:', publicKey);
+    } else {
+      console.error('EmailJS Public Key is missing! Check your .env.local file.');
+    }
+  }, []);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -88,26 +99,32 @@ export default function ContactPage() {
       // EmailJS configuration from environment variables
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
       // Debug: Log the values (remove this after testing)
       console.log('EmailJS Config:', {
         serviceId,
         templateId,
-        publicKey,
         hasServiceId: !!serviceId,
         hasTemplateId: !!templateId,
-        hasPublicKey: !!publicKey,
       });
 
       // Check if credentials are loaded
-      if (!serviceId || !templateId || !publicKey) {
+      if (!serviceId || !templateId) {
         throw new Error(
           'EmailJS credentials are not loaded. Did you restart your dev server?'
         );
       }
 
-      // Send email using EmailJS
+      console.log('Sending email with data:', {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        budget: formData.budget,
+        message: formData.message.substring(0, 50) + '...',
+      });
+
+      // Send email using EmailJS (already initialized in useEffect)
       const result = await emailjs.send(
         serviceId,
         templateId,
@@ -119,9 +136,10 @@ export default function ContactPage() {
           budget: formData.budget,
           message: formData.message,
           to_name: 'NOLA Web Development',
-        },
-        publicKey
+        }
       );
+
+      console.log('EmailJS Success:', result);
 
       if (result.status === 200) {
         setStatus({

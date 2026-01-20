@@ -5,9 +5,9 @@
 Your EmailJS is now configured with the following credentials:
 
 ```
-Service ID: service_73mzdz9
-Template ID: template_ssyyfew
-Public Key: JKQ8srUHAnzgDVL0j
+Service ID: service_8air3b7
+Template ID: template_7tsv8ma
+Public Key: eWcmORAIMeZh2U8bg
 ```
 
 These are now stored securely in `.env.local` (which is ignored by git).
@@ -31,11 +31,11 @@ Go to [EmailJS Dashboard](https://dashboard.emailjs.com/) and verify:
 
 #### **Service Setup:**
 - [ ] You have a service connected (Gmail, Outlook, etc.)
-- [ ] Service ID matches: `service_73mzdz9`
+- [ ] Service ID matches: `service_8air3b7`
 - [ ] The service is connected to **nolawebdev@gmail.com**
 
 #### **Template Setup:**
-- [ ] Template ID matches: `template_ssyyfew`
+- [ ] Template ID matches: `template_7tsv8ma`
 - [ ] Template is active and published
 - [ ] Template variables match the ones below
 
@@ -163,9 +163,9 @@ If you see CORS errors in console:
 Your `.env.local` file contains:
 
 ```bash
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_73mzdz9
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_ssyyfew
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=JKQ8srUHAnzgDVL0j
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_8air3b7
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_7tsv8ma
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=eWcmORAIMeZh2U8bg
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
@@ -179,9 +179,9 @@ When deploying to Vercel/Netlify/etc:
 
 1. **Add Environment Variables** in your hosting dashboard:
    ```
-   NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_73mzdz9
-   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_ssyyfew
-   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=JKQ8srUHAnzgDVL0j
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_8air3b7
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_7tsv8ma
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=eWcmORAIMeZh2U8bg
    NEXT_PUBLIC_SITE_URL=https://nolawebdevelopment.com
    ```
 

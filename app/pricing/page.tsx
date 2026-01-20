@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FaCheck, FaSpinner } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 
 interface PricingPlan {
   name: string;
@@ -79,46 +78,6 @@ const pricingPlans: PricingPlan[] = [
 ];
 
 export default function PricingPage() {
-  const [loading, setLoading] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSubscribe = async (priceId: string, planName: string) => {
-    try {
-      setLoading(priceId);
-      setError(null);
-
-      // Call API to create checkout session
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          priceId,
-          customerEmail: '', // Optional: can collect email first
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to create checkout session');
-      }
-
-      // Redirect to Stripe Checkout URL
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        throw new Error('No checkout URL returned');
-      }
-    } catch (err: any) {
-      console.error('Checkout error:', err);
-      setError(err.message || 'Something went wrong. Please try again.');
-    } finally {
-      setLoading(null);
-    }
-  };
-
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -146,17 +105,6 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <section className="section-padding bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="container-custom">
-          {/* Error Message */}
-          {error && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="max-w-2xl mx-auto mb-8 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700"
-            >
-              {error}
-            </motion.div>
-          )}
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {pricingPlans.map((plan, index) => (
               <motion.div
@@ -203,24 +151,16 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <button
-                  onClick={() => handleSubscribe(plan.priceId, plan.name)}
-                  disabled={loading !== null}
+                <Link
+                  href="/contact"
                   className={`w-full px-6 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center ${
                     plan.popular
                       ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700 shadow-lg hover:shadow-xl'
                       : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
-                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                  }`}
                 >
-                  {loading === plan.priceId ? (
-                    <>
-                      <FaSpinner className="animate-spin mr-2" />
-                      Processing...
-                    </>
-                  ) : (
-                    'Get Your Free Website Demo'
-                  )}
-                </button>
+                  Get Your Free Website Demo
+                </Link>
               </motion.div>
             ))}
           </div>

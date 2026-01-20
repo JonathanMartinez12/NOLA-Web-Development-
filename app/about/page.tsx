@@ -44,42 +44,6 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: 'Alex Martinez',
-    role: 'Founder & Lead Developer',
-    bio: '10+ years of experience in full-stack development and SEO optimization.',
-    image: '/images/team/member-1.jpg',
-  },
-  {
-    name: 'Sarah Chen',
-    role: 'UI/UX Designer',
-    bio: 'Award-winning designer specializing in conversion-focused user experiences.',
-    image: '/images/team/member-2.jpg',
-  },
-  {
-    name: 'Michael Johnson',
-    role: 'SEO Specialist',
-    bio: 'Proven track record of getting clients to #1 rankings on Google.',
-    image: '/images/team/member-3.jpg',
-  },
-  {
-    name: 'Emily Rodriguez',
-    role: 'Project Manager',
-    bio: 'Ensures every project is delivered on time and exceeds client expectations.',
-    image: '/images/team/member-4.jpg',
-  },
-];
-
-const milestones = [
-  { year: '2018', event: 'NOLA Web Development Founded' },
-  { year: '2019', event: 'Reached 100 Happy Clients' },
-  { year: '2020', event: 'Expanded Services to Include E-Commerce' },
-  { year: '2021', event: 'Won Best Web Development Agency Award' },
-  { year: '2022', event: 'Launched Digital Marketing Division' },
-  { year: '2023', event: 'Celebrated 500+ Successful Projects' },
-];
-
 export default function AboutPage() {
   return (
     <div className="pt-20">
@@ -96,8 +60,8 @@ export default function AboutPage() {
               About NOLA Web Development
             </h1>
             <p className="text-xl text-slate-200 leading-relaxed">
-              We're a passionate team of developers, designers, and digital marketers
-              dedicated to helping New Orleans businesses thrive online.
+              Founded in 2025 by two college students who wanted the best for local businesses
+              to be seen by potential customers in the area.
             </p>
           </motion.div>
         </div>
@@ -118,22 +82,24 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
                 <p>
-                  Founded in 2018, NOLA Web Development was born from a simple mission:
-                  to help local businesses compete in the digital age without breaking the bank.
+                  Founded in 2025, NOLA Web Development was born from a simple but powerful idea:
+                  two college students who saw local businesses struggling to be found online and
+                  wanted to help them connect with potential customers in their area.
                 </p>
                 <p>
-                  What started as a one-person operation has grown into a full-service
-                  digital agency serving clients across New Orleans and beyond. We've helped
-                  over 500 businesses transform their online presence and achieve measurable results.
+                  We understand the challenges small and local businesses face in today's digital
+                  landscape. That's why we created a service model that removes the biggest barrier
+                  to entry—the upfront cost of a professional website. With our SEO packages, you
+                  get a custom website included, so you can focus on what you do best: running your business.
                 </p>
                 <p>
-                  Our team combines technical expertise with creative vision and strategic
-                  thinking. We don't just build websites—we create digital experiences that
-                  drive growth, engage audiences, and deliver ROI.
+                  Our mission is simple: help local businesses thrive by making them visible to the
+                  customers who are searching for their services. We combine technical expertise with
+                  a genuine passion for seeing our community succeed.
                 </p>
                 <p>
-                  Whether you're a small startup or an established enterprise, we bring the
-                  same level of dedication, creativity, and technical excellence to every project.
+                  Whether you're just starting out or looking to expand your online presence, we bring
+                  fresh ideas, modern technology, and a commitment to your success to every project.
                 </p>
               </div>
             </motion.div>
@@ -198,97 +164,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Meet Our Team
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              The talented individuals behind our success. Each team member brings
-              unique expertise and passion to every project.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card text-center group"
-              >
-                <div className="relative w-32 h-32 mx-auto mb-6">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-4xl font-bold group-hover:scale-110 transition-transform duration-300">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-primary-600 font-semibold mb-3">
-                  {member.role}
-                </p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {member.bio}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-slate-100">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Journey
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              A timeline of milestones that have shaped our growth and success.
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative pl-8 pb-12 border-l-4 border-primary-500 last:pb-0"
-              >
-                <div className="absolute left-0 top-0 w-6 h-6 -ml-[14px] rounded-full bg-gradient-to-br from-primary-500 to-accent-500 border-4 border-white shadow-lg"></div>
-                <div className="card ml-6">
-                  <div className="text-2xl font-bold text-primary-600 mb-2">
-                    {milestone.year}
-                  </div>
-                  <p className="text-lg text-slate-700 font-semibold">
-                    {milestone.event}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-br from-primary-600 via-accent-600 to-primary-600 text-white">

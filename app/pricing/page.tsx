@@ -131,7 +131,7 @@ export default function PricingPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              We Build Your Website FREE
+              Affordable Web Development Pricing | Free Website with SEO
             </h1>
             <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-4">
               You only pay for SEO and online visibility to get more leads, calls, and quote requests.
@@ -190,7 +190,7 @@ export default function PricingPage() {
                     <span className="text-slate-600 ml-2">/month</span>
                   </div>
                   <p className="text-sm text-slate-500 mt-2">
-                    14-day free trial • Cancel anytime
+                    Cancel anytime
                   </p>
                 </div>
 
@@ -299,10 +299,6 @@ export default function PricingPage() {
 
           <div className="space-y-6">
             {[
-              {
-                q: 'How does the free trial work?',
-                a: 'Start with a 14-day free trial - no credit card required. After the trial, your subscription begins automatically unless you cancel.',
-              },
               {
                 q: 'Can I cancel my subscription?',
                 a: 'Yes! Cancel anytime with no fees or penalties. You\'ll continue to have access until the end of your billing period.',

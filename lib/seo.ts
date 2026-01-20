@@ -54,15 +54,15 @@ export const defaultKeywords = [
 
 export const siteConfig = {
   name: 'NOLA Web Development',
-  description: 'Premier web development and SEO services in New Orleans. We build high-performance, SEO-optimized websites that drive traffic, generate leads, and grow your business. Specializing in custom web design, e-commerce, and digital marketing solutions.',
+  description: 'Get a FREE custom website when you purchase any SEO package! New Orleans web development and SEO services helping local businesses be seen by customers. Website-only option available for $1,200.',
   url: 'https://nolawebdevelopment.com',
   ogImage: '/images/og-image.jpg',
   creator: 'NOLA Web Development',
   company: {
     name: 'NOLA Web Development',
     address: 'New Orleans, Louisiana',
-    phone: '(504) XXX-XXXX',
-    email: 'info@nolawebdevelopment.com',
+    phone: '(281) 382-1778',
+    email: 'nolawebdev@gmail.com',
   },
 };
 

@@ -16,14 +16,14 @@ const contactInfo = [
   {
     icon: FaEnvelope,
     title: 'Email Us',
-    details: 'info@nolawebdev.com',
-    link: 'mailto:info@nolawebdev.com',
+    details: 'nolawebdev@gmail.com',
+    link: 'mailto:nolawebdev@gmail.com',
   },
   {
     icon: FaPhone,
     title: 'Call Us',
-    details: '(504) 123-4567',
-    link: 'tel:+15041234567',
+    details: '(281) 382-1778',
+    link: 'tel:+12813821778',
   },
   {
     icon: FaMapMarkerAlt,
@@ -85,10 +85,10 @@ export default function ContactPage() {
     setStatus({ type: null, message: '' });
 
     try {
-      // EmailJS configuration
-      const serviceId = 'service_73mzdz9';
-      const templateId = 'template_ssyyfew';
-      const publicKey = 'JKQ8srUHAnzgDVL0j';
+      // EmailJS configuration from environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
       // Send email using EmailJS
       const result = await emailjs.send(
@@ -124,7 +124,7 @@ export default function ContactPage() {
       console.error('EmailJS Error:', error);
       setStatus({
         type: 'error',
-        message: 'Oops! Something went wrong. Please try again or contact us directly at info@nolawebdev.com',
+        message: 'Oops! Something went wrong. Please try again or contact us directly at nolawebdev@gmail.com',
       });
     } finally {
       setIsSubmitting(false);

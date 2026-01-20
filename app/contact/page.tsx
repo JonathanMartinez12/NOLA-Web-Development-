@@ -86,9 +86,26 @@ export default function ContactPage() {
 
     try {
       // EmailJS configuration from environment variables
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      // Debug: Log the values (remove this after testing)
+      console.log('EmailJS Config:', {
+        serviceId,
+        templateId,
+        publicKey,
+        hasServiceId: !!serviceId,
+        hasTemplateId: !!templateId,
+        hasPublicKey: !!publicKey,
+      });
+
+      // Check if credentials are loaded
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          'EmailJS credentials are not loaded. Did you restart your dev server?'
+        );
+      }
 
       // Send email using EmailJS
       const result = await emailjs.send(

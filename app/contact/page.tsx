@@ -85,10 +85,10 @@ export default function ContactPage() {
     setStatus({ type: null, message: '' });
 
     try {
-      // EmailJS configuration
-      const serviceId = 'service_73mzdz9';
-      const templateId = 'template_ssyyfew';
-      const publicKey = 'JKQ8srUHAnzgDVL0j';
+      // EmailJS configuration from environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
       // Send email using EmailJS
       const result = await emailjs.send(

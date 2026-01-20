@@ -199,6 +199,48 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* SEO Statistics Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 to-primary-900 text-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="mb-6">
+              <div className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-4">
+                75%
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                of all clicks go to the top 3 results on Google
+              </h2>
+              <p className="text-xl text-slate-300 leading-relaxed mb-6">
+                If your business isn't ranking on the first page, you're invisible to potential customers searching for your services.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="p-4 bg-white/10 backdrop-blur-sm rounded-lg">
+                  <div className="text-3xl font-bold text-accent-400 mb-2">90%</div>
+                  <p className="text-sm text-slate-300">of users never scroll past the first page</p>
+                </div>
+                <div className="p-4 bg-white/10 backdrop-blur-sm rounded-lg">
+                  <div className="text-3xl font-bold text-primary-400 mb-2">#1</div>
+                  <p className="text-sm text-slate-300">position gets 10x more clicks than #10</p>
+                </div>
+                <div className="p-4 bg-white/10 backdrop-blur-sm rounded-lg">
+                  <div className="text-3xl font-bold text-accent-400 mb-2">24/7</div>
+                  <p className="text-sm text-slate-300">SEO works for you around the clock</p>
+                </div>
+              </div>
+              <p className="text-lg text-slate-200 mt-8 font-semibold">
+                Our SEO services get you in front of customers actively searching for what you offer.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Value Proposition */}
       <section className="py-12 bg-gradient-to-br from-primary-50 to-accent-50">
         <div className="container-custom">

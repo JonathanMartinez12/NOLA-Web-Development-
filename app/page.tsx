@@ -232,6 +232,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SEO Statistics Section */}
+      <section className="section-padding bg-gradient-to-br from-primary-900 via-slate-900 to-accent-900 text-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl mx-auto text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              Be Found. Get More Customers.
+            </h2>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 mb-8">
+              <div className="text-7xl md:text-8xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-4">
+                75%
+              </div>
+              <p className="text-2xl md:text-3xl font-semibold mb-4">
+                of all clicks go to the top 3 results on Google
+              </p>
+              <p className="text-xl text-slate-300">
+                If you're not on the first page, you're missing out on 90% of potential customers
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="p-6 bg-white/10 backdrop-blur-sm rounded-xl"
+              >
+                <div className="text-4xl font-bold text-primary-400 mb-2">1st Position</div>
+                <p className="text-slate-300">Gets 10x more clicks than position #10</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="p-6 bg-white/10 backdrop-blur-sm rounded-xl"
+              >
+                <div className="text-4xl font-bold text-accent-400 mb-2">Page 1</div>
+                <p className="text-slate-300">Captures 90% of all search traffic</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="p-6 bg-white/10 backdrop-blur-sm rounded-xl"
+              >
+                <div className="text-4xl font-bold text-primary-400 mb-2">24/7</div>
+                <p className="text-slate-300">SEO brings customers while you sleep</p>
+              </motion.div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-12"
+            >
+              <Link
+                href="/services"
+                className="inline-block bg-gradient-to-r from-primary-500 to-accent-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-primary-600 hover:to-accent-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                Get Your Free SEO Audit
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="section-padding bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="container-custom">

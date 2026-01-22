@@ -36,6 +36,20 @@ const projects = [
       seo: '#1 Local',
     },
   },
+  {
+    id: 3,
+    title: 'Fann\'s Cleaning Services',
+    category: 'Professional Services',
+    description: 'Professional cleaning services website with online booking, service area information, and comprehensive SEO optimization. Clean, modern design that showcases reliability and quality service.',
+    image: '/images/portfolio/fanns-cleaning-services.png',
+    tags: ['Next.js', 'React', 'SEO Optimized', 'Responsive Design'],
+    link: 'https://fannscleaningservices.com/',
+    results: {
+      visibility: 'Top Rankings',
+      bookings: 'Online',
+      traffic: 'Growing',
+    },
+  },
 ];
 
 export default function PortfolioPage() {

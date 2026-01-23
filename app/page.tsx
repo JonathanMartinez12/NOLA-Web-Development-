@@ -175,7 +175,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
+              className="mt-16 flex flex-wrap justify-center gap-8 md:gap-16"
             >
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">

@@ -22,6 +22,7 @@ const footerLinks = {
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms of Service', href: '/terms' },
     { label: 'Cookie Policy', href: '/cookies' },
+    { label: 'Sitemap', href: '/sitemap.xml' },
   ],
 };
 
@@ -151,10 +152,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+12813821778"
+                  href="tel:+15049132398"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  (281) 382-1778
+                  (504) 913-2398
                 </a>
               </li>
             </ul>

@@ -22,8 +22,8 @@ const contactInfo = [
   {
     icon: FaPhone,
     title: 'Call Us',
-    details: '(281) 382-1778',
-    link: 'tel:+12813821778',
+    details: '(504) 913-2398',
+    link: 'tel:+15049132398',
   },
   {
     icon: FaMapMarkerAlt,

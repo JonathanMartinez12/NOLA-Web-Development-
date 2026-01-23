@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ShaderGradient, ShaderGradientCanvas } from '@shadergradient/react';
 import {
   FaCode,
   FaSearch,
@@ -81,33 +82,51 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-primary-900 to-accent-900 text-white pt-20">
-        {/* Animated Background */}
+      <section className="relative min-h-screen flex items-center justify-center text-white pt-20">
+        {/* Shader Gradient Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
+          <ShaderGradientCanvas
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
             }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="absolute -top-40 -right-40 w-96 h-96 bg-primary-500 rounded-full opacity-20 blur-3xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1, 1.3, 1],
-              rotate: [0, -90, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent-500 rounded-full opacity-20 blur-3xl"
-          />
+          >
+            <ShaderGradient
+              type="waterPlane"
+              animate="on"
+              uTime={0}
+              uSpeed={0.3}
+              uStrength={2}
+              uDensity={1.5}
+              uFrequency={5.5}
+              uAmplitude={3}
+              positionX={0}
+              positionY={0}
+              positionZ={0}
+              rotationX={0}
+              rotationY={0}
+              rotationZ={0}
+              color1="#0ea5e9"
+              color2="#d946ef"
+              color3="#0f172a"
+              reflection={0.1}
+              wireframe={false}
+              shader="defaults"
+              cAzimuthAngle={180}
+              cPolarAngle={90}
+              cDistance={3}
+              cameraZoom={1}
+              lightType="3d"
+              brightness={1.2}
+              envPreset="city"
+              grain="off"
+            />
+          </ShaderGradientCanvas>
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-slate-900/30" />
         </div>
 
         <div className="container-custom relative z-10">

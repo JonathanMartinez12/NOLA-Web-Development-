@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: FaPhone,
     title: 'Call Us',
-    details: '(504) 913-2398',
+    details: '(504) 913-2398 / (281) 382-1778',
     link: 'tel:+15049132398',
   },
   {

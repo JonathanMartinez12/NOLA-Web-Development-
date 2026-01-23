@@ -158,6 +158,14 @@ export default function Footer() {
                   (504) 913-2398
                 </a>
               </li>
+              <li>
+                <a
+                  href="tel:+12813821778"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  (281) 382-1778
+                </a>
+              </li>
             </ul>
           </motion.div>
         </div>

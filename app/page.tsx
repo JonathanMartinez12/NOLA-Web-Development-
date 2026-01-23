@@ -98,11 +98,11 @@ export default function Home() {
               type="waterPlane"
               animate="on"
               uTime={0}
-              uSpeed={0.3}
-              uStrength={2}
-              uDensity={1.5}
-              uFrequency={5.5}
-              uAmplitude={3}
+              uSpeed={0.08}
+              uStrength={0.8}
+              uDensity={1.2}
+              uFrequency={3}
+              uAmplitude={1.5}
               positionX={0}
               positionY={0}
               positionZ={0}
@@ -117,10 +117,10 @@ export default function Home() {
               shader="defaults"
               cAzimuthAngle={180}
               cPolarAngle={90}
-              cDistance={3}
+              cDistance={3.5}
               cameraZoom={1}
               lightType="3d"
-              brightness={1.2}
+              brightness={1.1}
               envPreset="city"
               grain="off"
             />

@@ -72,7 +72,6 @@ const testimonials = [
 ];
 
 const stats = [
-  { number: '500+', label: 'Websites Built' },
   { number: '98%', label: 'Client Satisfaction' },
   { number: '250%', label: 'Avg. Traffic Increase' },
   { number: '24/7', label: 'Support Available' },

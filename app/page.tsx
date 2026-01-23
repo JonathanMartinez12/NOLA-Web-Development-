@@ -97,11 +97,11 @@ export default function Home() {
               type="waterPlane"
               animate="on"
               uTime={0}
-              uSpeed={0.08}
-              uStrength={0.8}
+              uSpeed={0.2}
+              uStrength={1}
               uDensity={1.2}
-              uFrequency={3}
-              uAmplitude={1.5}
+              uFrequency={3.5}
+              uAmplitude={2}
               positionX={0}
               positionY={0}
               positionZ={0}

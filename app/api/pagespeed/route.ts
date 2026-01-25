@@ -28,10 +28,11 @@ export async function GET(request: NextRequest) {
     const apiUrl = new URL(PAGESPEED_API_URL);
     apiUrl.searchParams.set('url', url);
     apiUrl.searchParams.set('strategy', strategy);
-    apiUrl.searchParams.set('category', 'performance');
-    apiUrl.searchParams.set('category', 'accessibility');
-    apiUrl.searchParams.set('category', 'best-practices');
-    apiUrl.searchParams.set('category', 'seo');
+    // Use append for multiple category values (set would overwrite)
+    apiUrl.searchParams.append('category', 'performance');
+    apiUrl.searchParams.append('category', 'accessibility');
+    apiUrl.searchParams.append('category', 'best-practices');
+    apiUrl.searchParams.append('category', 'seo');
 
     // Add API key if available (increases quota from 400/day to 25,000/day)
     if (process.env.GOOGLE_PAGESPEED_API_KEY) {

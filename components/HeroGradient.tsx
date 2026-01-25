@@ -1,8 +1,27 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { ShaderGradient, ShaderGradientCanvas } from '@shadergradient/react';
 
 export default function HeroGradient() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Only load heavy 3D shader on desktop devices (768px+)
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    };
+
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
+  // Don't render the heavy Three.js shader on mobile
+  if (!isDesktop) {
+    return null;
+  }
+
   return (
     <ShaderGradientCanvas
       style={{

@@ -88,14 +88,19 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-white pt-20">
-        {/* CSS Gradient Fallback (shows immediately) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-primary-900 to-accent-900" />
-        {/* Lazy-loaded Shader Gradient Background */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Animated CSS Gradient (shows on mobile, fallback on desktop) */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-slate-900 via-primary-900 to-accent-900 animate-gradient-shift"
+          style={{
+            backgroundSize: '200% 200%',
+          }}
+        />
+        {/* Lazy-loaded Shader Gradient Background (desktop only) */}
+        <div className="absolute inset-0 overflow-hidden hidden md:block">
           <HeroGradient />
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-slate-900/30" />
         </div>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-slate-900/30" />
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">

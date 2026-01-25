@@ -14,8 +14,8 @@ import {
   FaStar
 } from 'react-icons/fa';
 
-// Lazy load the heavy shader gradient component
-const HeroGradient = dynamic(() => import('@/components/HeroGradient'), {
+// Lazy load the shader background - only loads Three.js on desktop
+const HeroBackground = dynamic(() => import('@/components/HeroBackground'), {
   ssr: false,
   loading: () => null,
 });
@@ -97,7 +97,7 @@ export default function Home() {
         />
         {/* Lazy-loaded Shader Gradient Background (desktop only) */}
         <div className="absolute inset-0 overflow-hidden hidden md:block">
-          <HeroGradient />
+          <HeroBackground />
         </div>
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-slate-900/30" />

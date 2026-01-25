@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { ShaderGradient, ShaderGradientCanvas } from '@shadergradient/react';
 import {
   FaCode,
   FaSearch,
@@ -13,6 +13,12 @@ import {
   FaQuoteLeft,
   FaStar
 } from 'react-icons/fa';
+
+// Lazy load the heavy shader gradient component
+const HeroGradient = dynamic(() => import('@/components/HeroGradient'), {
+  ssr: false,
+  loading: () => null,
+});
 
 const features = [
   {
@@ -82,48 +88,11 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-white pt-20">
-        {/* Shader Gradient Background */}
+        {/* CSS Gradient Fallback (shows immediately) */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-primary-900 to-accent-900" />
+        {/* Lazy-loaded Shader Gradient Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <ShaderGradientCanvas
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-            }}
-          >
-            <ShaderGradient
-              type="waterPlane"
-              animate="on"
-              uTime={0}
-              uSpeed={0.2}
-              uStrength={1}
-              uDensity={1.2}
-              uFrequency={3.5}
-              uAmplitude={2}
-              positionX={0}
-              positionY={0}
-              positionZ={0}
-              rotationX={0}
-              rotationY={0}
-              rotationZ={0}
-              color1="#0ea5e9"
-              color2="#d946ef"
-              color3="#0f172a"
-              reflection={0.1}
-              wireframe={false}
-              shader="defaults"
-              cAzimuthAngle={180}
-              cPolarAngle={90}
-              cDistance={3.5}
-              cameraZoom={1}
-              lightType="3d"
-              brightness={1.1}
-              envPreset="city"
-              grain="off"
-            />
-          </ShaderGradientCanvas>
+          <HeroGradient />
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-slate-900/30" />
         </div>

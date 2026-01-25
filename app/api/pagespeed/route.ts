@@ -33,6 +33,11 @@ export async function GET(request: NextRequest) {
     apiUrl.searchParams.set('category', 'best-practices');
     apiUrl.searchParams.set('category', 'seo');
 
+    // Add API key if available (increases quota from 400/day to 25,000/day)
+    if (process.env.GOOGLE_PAGESPEED_API_KEY) {
+      apiUrl.searchParams.set('key', process.env.GOOGLE_PAGESPEED_API_KEY);
+    }
+
     const response = await fetch(apiUrl.toString(), {
       headers: {
         'Accept': 'application/json',

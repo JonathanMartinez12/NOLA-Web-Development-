@@ -14,6 +14,7 @@ const navLinks = [
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
+  { href: '/audit', label: 'Free Audit', highlight: true },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -86,8 +87,10 @@ export default function Navigation() {
               >
                 <Link
                   href={link.href}
-                  className={`text-base font-medium transition-colors duration-200 hover:text-primary-600 ${
-                    showSolidBg ? 'text-slate-700' : 'text-white'
+                  className={`text-base font-medium transition-colors duration-200 ${
+                    'highlight' in link && link.highlight
+                      ? 'text-emerald-500 hover:text-emerald-600'
+                      : `hover:text-primary-600 ${showSolidBg ? 'text-slate-700' : 'text-white'}`
                   }`}
                 >
                   {link.label}
@@ -138,7 +141,11 @@ export default function Navigation() {
                 >
                   <Link
                     href={link.href}
-                    className="block py-2 text-slate-700 hover:text-primary-600 font-medium transition-colors"
+                    className={`block py-2 font-medium transition-colors ${
+                      'highlight' in link && link.highlight
+                        ? 'text-emerald-500 hover:text-emerald-600'
+                        : 'text-slate-700 hover:text-primary-600'
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}

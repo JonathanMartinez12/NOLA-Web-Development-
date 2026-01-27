@@ -193,7 +193,7 @@ export default function ServicesPage() {
               Want a website with ongoing SEO to drive traffic? Your custom website build is included free with any monthly SEO package.
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              Need just a website without SEO? One-time payment of <strong>$1,200</strong>.
+              Need just a website without SEO? Entry level websites start at <strong>$1,200*</strong>.
             </p>
           </motion.div>
         </div>
@@ -211,17 +211,17 @@ export default function ServicesPage() {
               className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
             >
               <div className="p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-5xl font-bold text-primary-600 mb-2">FREE</div>
                 <h3 className="font-semibold text-slate-800 mb-2">Website with SEO Package</h3>
+                <div className="text-5xl font-bold text-primary-600 mb-2">FREE</div>
                 <p className="text-sm text-slate-600">
                   Purchase any SEO package and get your custom website build included free
                 </p>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-lg">
-                <div className="text-5xl font-bold text-accent-600 mb-2">$1,200</div>
+                <div className="text-5xl font-bold text-accent-600 mb-2">$1,200*</div>
                 <h3 className="font-semibold text-slate-800 mb-2">Website Only Option</h3>
                 <p className="text-sm text-slate-600">
-                  Need just a website? One-time payment with no ongoing SEO
+                  Entry level websites start at $1,200*
                 </p>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-lg">

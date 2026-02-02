@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
+  { href: '/audit', label: 'Free Audit' },
 ];
 
 export default function Navigation() {
@@ -77,7 +78,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link, index) => (
+            {navLinks.filter(l => l.href !== '/audit').map((link, index) => (
               <motion.div
                 key={link.href}
                 initial={{ opacity: 0, y: -20 }}
@@ -97,7 +98,19 @@ export default function Navigation() {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              <Link
+                href="/audit"
+                className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              >
+                Free Audit
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
             >
               <Link href="/contact" className="btn-primary">
                 Get Started
@@ -129,7 +142,7 @@ export default function Navigation() {
             className="md:hidden bg-white border-t border-slate-200"
           >
             <div className="container-custom py-4 space-y-4">
-              {navLinks.map((link, index) => (
+              {navLinks.filter(l => l.href !== '/audit').map((link, index) => (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, x: -20 }}
@@ -148,8 +161,22 @@ export default function Navigation() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                className="pt-4"
+                transition={{ duration: 0.3, delay: 0.35 }}
+                className="pt-2"
+              >
+                <Link
+                  href="/audit"
+                  className="block w-full text-center py-3 text-base font-semibold rounded-lg text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-md"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Free Audit
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+                className="pt-2"
               >
                 <Link
                   href="/contact"

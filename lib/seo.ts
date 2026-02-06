@@ -54,7 +54,7 @@ export const defaultKeywords = [
 
 export const siteConfig = {
   name: 'NOLA Web Development',
-  description: 'Get a FREE custom website when you purchase any SEO package! New Orleans web development and SEO services helping local businesses be seen by customers. Website-only option available for $1,200.',
+  description: 'Get a FREE custom website when you purchase any SEO package! New Orleans web development and SEO services helping local businesses be seen by customers. Contact us for a personalized quote.',
   url: 'https://nolawebdevelopment.com',
   ogImage: '/images/og-image.jpg',
   creator: 'NOLA Web Development',

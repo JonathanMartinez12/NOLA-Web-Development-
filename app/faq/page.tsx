@@ -47,12 +47,12 @@ const faqCategories: FAQCategory[] = [
       {
         question: 'How does the free website offer work?',
         answer:
-          'When you purchase any of our monthly SEO packages (starting at $349/month), we build your custom website completely free. You get to see a demo of your website before it goes live. Your only cost is the monthly SEO subscription.',
+          'When you purchase any of our monthly SEO packages, we build your custom website completely free. You get to see a demo of your website before it goes live. Your only cost is the monthly SEO subscription. Contact us for details on our plans.',
       },
       {
         question: 'Can I get just a website without an SEO plan?',
         answer:
-          'Yes! Our website-only packages start at $2,500 for a Starter site (up to 5 pages) and go up to custom Enterprise solutions. Entry level websites start at $1,200. Visit our Services page for full details on all options.',
+          'Yes! We offer website-only packages ranging from simple starter sites to full custom Enterprise solutions. Contact us for a personalized quote based on your needs.',
       },
       {
         question: 'Can I cancel my subscription?',

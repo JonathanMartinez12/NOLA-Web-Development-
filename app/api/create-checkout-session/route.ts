@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
       ],
       customer_email: customerEmail || undefined,
       success_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/pricing/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/pricing?canceled=true`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/services?canceled=true`,
       subscription_data: {
         trial_period_days: 14, // Optional: 14-day free trial
       },
